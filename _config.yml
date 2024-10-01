@@ -1,3 +1,4 @@
-theme: jekyll-theme-minimal
+theme: jekyll-theme-hacker
 title: Bryan Fox's Cybersecurity github
 description: This is a website to display Bryans skills in many aspects of Cybersecrurity
+show_downloads: true
