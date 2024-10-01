@@ -1,4 +1,4 @@
-Evil-WinRM
+# Evil-WinRM
 
 ### Usage
 
@@ -11,9 +11,5 @@ Evil-WinRM
 	- password
 ### Examples
 	- `evil-winrm -i 10.10.11.106 -u tony -p liltony `
-
-### POST intial access help
-upload
-	upload a file from your device onto the machine 
 	
 	
