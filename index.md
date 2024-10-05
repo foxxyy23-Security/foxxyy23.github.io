@@ -1,6 +1,12 @@
----
-layout: default
----
+Bryan Fox has many different expiences in the world of Cybersecurity. He has worked a multiple companies as a Security Analyst. He has vast skills in investigation and Triage, Vulnerability management, Incident Response, Pentesting, EDR management, and many more!
+
+
+
+
+Bryan has spent a vast amount of time doing research and completing writeups for many security topics. Use the link below to veiw some of them!
+
+[Writups](Writeups/index.md)
+
 
 Text can be **bold**, _italic_, ~~strikethrough~~ or `keyword`.
 
