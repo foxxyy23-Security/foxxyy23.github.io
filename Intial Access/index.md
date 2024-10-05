@@ -1,6 +1,5 @@
----
-layout: default
----
+# This page is to test multiple webpages inside the same repository
+
 
 Text can be **bold**, _italic_, ~~strikethrough~~ or `keyword`.
 
