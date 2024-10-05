@@ -8,6 +8,10 @@ Bryan has spent a vast amount of time doing research and completing writeups for
 [Writups](Writeups/index.md)
 
 
+
+Tesing another link
+[Note_page](Evil-winRM.md)
+
 Text can be **bold**, _italic_, ~~strikethrough~~ or `keyword`.
 
 [Link to another page](./another-page.html).
