@@ -21,7 +21,9 @@ Bryan has spent a vast amount of time doing research and completing writeups for
 # Bryan's Professional certifications
 - CCSA - Check Point Security Administrator
 - PJTP - junior Penetration tester
-- CompTIA - Security + 
+- CompTIA - Security +
+
+
 Text can be **bold**, _italic_, ~~strikethrough~~ or `keyword`.
 
 [Link to another page](./another-page.html).
