@@ -1,1 +1,0 @@
-# Bryan Fox's HackTheBox Writeups 
