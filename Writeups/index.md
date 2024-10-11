@@ -6,6 +6,8 @@
 ## Red Team
 ### Hack the Box
 [HackTheBox](Red_team/HackTheBox/index.md)
+[hackthebox2](Writeups/Red_Team/HackTheBox/index.md)
+
 ### TryHackMe
 
 
