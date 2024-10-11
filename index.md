@@ -24,6 +24,13 @@ Bryan has spent a vast amount of time doing research and completing writeups for
 - CompTIA - Security +
 
 
+![smbclient_enumeration](https://github.com/foxxyy23-Security/foxxyy23.github.io/blob/main/images/smbclient_enum.png)
+
+
+# Testing custome png upload
+![testing]([images/smbclient enum](https://github.com/foxxyy23-Security/foxxyy23.github.io/blob/main/images/smbclient_enum.png))
+
+
 Text can be **bold**, _italic_, ~~strikethrough~~ or `keyword`.
 
 [Link to another page](./another-page.html).
