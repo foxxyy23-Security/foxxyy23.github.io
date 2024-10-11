@@ -6,7 +6,7 @@ Bryan Fox has many different experiences in the world of Cybersecurity. He has w
 Bryan has spent a vast amount of time doing research and completing writeups for many security topics. Use the link below to view some of them!
 
 [Writups](Writeups/index.md)
-[Notes] (NOTES\index.md)
+[Notes](NOTES\index.md)
 
 # Bryan's Professional Experience
 ## Information Security Analyst
