@@ -6,8 +6,6 @@
 nmap -p- -A -Pn <IP> -o nmap.txt
 
 ```
-![smbclinet_enum](https://github.com/foxxyy23-Security/foxxyy23.github.io/blob/main/images/smbclient_enum.png)
-
 Based on the nmap scan, we have some interesting results
 - SMB (445) open, which allows for guest authentication (based on our Nmap script) 
 - HTTP (80) open
