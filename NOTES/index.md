@@ -3,7 +3,7 @@
 ### Certificaiton preps as well!
 
 
-[Initial_Access](Intial Access\index.md)
+[Initial_Access](https://github.com/foxxyy23-Security/foxxyy23.github.io/tree/main/NOTES/Intial%20Access)
 
 [Other](Other/index.md)
 
