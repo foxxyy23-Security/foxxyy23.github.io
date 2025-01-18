@@ -1,8 +1,17 @@
-Date: 2024-05-19
-
 Topics: #portscanning #nmap #enumeration
 
-Notes:
+# nmap (network mapper)
+	-T4 (speed of packets)
+	-p- (All ports) no P = top 1000 ports (take away -  and add a number for the specific port)
+	-A (all of it, everything)
+	-sn (ping scans)
+	-Pn (treat all hosts as oline)
+	-sU (UDP scan )
+	-SV (probe open ports to determine service/version)
+	-sC 
+	-O 
+
+## Notes:
 -A 
 	Aggressive - scans everything
 -Pn 
@@ -13,20 +22,21 @@ Notes:
 	all ports65565
 -p<port number>
 	(-p80,443,22) scan only those ports
+-O 
+	(OS detection)
+-script <ScriptName>
+	Run specified Nmap scripts
 
 
-nmap (network mapper)
-	-T4 (speed of packets)
-	-p- (All ports) no P = top 1000 ports (take away -  and add a number for the specific port)
-	-A (all of it, everything)
-	-sn (ping scans)
-	-Pn (treat all hosts as oline)
-	-sU (UDP scan )
-	-SV (probe open ports to determine service/version)
-	-sC (script)
-	-O (OS detection)
 
-example
+## Other
+### Scripts
+Nmap scrips can be found in the following directly on Kali
+```
+/usr/share/nmap/scripts
+```
+
+## example
 ```
 nmap -p- -A -Pn _IP_ -o output.txt
 ```

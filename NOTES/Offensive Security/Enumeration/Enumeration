@@ -12,11 +12,11 @@ Notes:
 -p<port number>
 	(-p80,443,22) scan only those ports
 
-# SMB, ldap, Kerberos 
+## SMB, ldap, Kerberos 
 enum4linx -a IP_address
 
 
-# HTTP/HTTPS
+##  HTTP/HTTPS
 - Visit the site 
 	- click away and see what you can find
 	- How does the application work?
