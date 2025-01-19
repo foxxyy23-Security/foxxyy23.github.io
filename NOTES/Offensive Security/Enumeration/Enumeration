@@ -15,6 +15,9 @@ Notes:
 ## SMB, ldap, Kerberos 
 enum4linx -a IP_address
 
+## LDAP
+ldapsearch
+
 
 ##  HTTP/HTTPS
 - Visit the site 

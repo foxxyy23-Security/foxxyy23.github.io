@@ -7,4 +7,11 @@
 
 \-m modes
 
+
+### Useful modules
+- NTLM
+    - 5600
+- Kerberos
+    -13100
+
 ### Examples
